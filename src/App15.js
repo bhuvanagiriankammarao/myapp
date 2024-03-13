@@ -1,22 +1,17 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import React from "react";
 import Feeds from "./Feeds";
-import Posts from "./Posts";
-import Comments from './Comments';
-import Album from './Album';
-
+import Post from "./Post";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 export default function App15() {
   return (
     <div>
-    <Router>
-      <Link to="/">Feeds</Link> | <Link to="/post">Post</Link> | <Link to="/Album">Album</Link>| <Link to="/Comments">Comments</Link>
-      <Routes>
-          <Route path="/" index element={<Feeds/>}></Route>
-          <Route path="/post" element={<Posts/>}></Route>
-          <Route path="/Album" element={<Album/>}></Route>
-          <Route path="/Comments" element={<Comments/>}></Route>
-      </Routes>
-    </Router>
-  </div>
-  )
+      <BrowserRouter>
+        <Link to="/">Feeds</Link> | <Link to="/post">Post</Link>
+        <Routes>
+            <Route path="/post" element={<Post/>}></Route>
+            <Route path="/" index element={<Feeds/>}></Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 }
